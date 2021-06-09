@@ -94,6 +94,11 @@ func (c *Conn) makeClientHello() (*clientHelloMsg, ecdheParameters, error) {
 		supportedVersions:            supportedVersions,
 	}
 
+	// [Psiphon]
+	if c.extraConfig != nil {
+		hello.PRNG = c.extraConfig.ClientHelloPRNG
+	}
+
 	if c.handshakes > 0 {
 		hello.secureRenegotiation = c.clientFinished[:]
 	}

@@ -915,6 +915,10 @@ func TestExtraConfigCloneNonFuncFields(t *testing.T) {
 			f.Set(reflect.ValueOf(true))
 		case "MaxEarlyData":
 			f.Set(reflect.ValueOf(uint32(42)))
+
+		// [Psiphon]
+		case "ClientHelloPRNG":
+
 		default:
 			t.Errorf("all fields must be accounted for, but saw unknown field %q", fn)
 		}

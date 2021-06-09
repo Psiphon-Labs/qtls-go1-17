@@ -1,4 +1,4 @@
-module github.com/marten-seemann/qtls-go1-17
+module github.com/Psiphon-Labs/qtls-go1-17
 
 go 1.17
 
